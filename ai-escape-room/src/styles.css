@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden; /* prevent browser-level scrollbar; app provides scrolling */
+	background: #0b0b09;
+}
+
+/* let the Angular root element provide scrolling for the app */
+app-root {
+	display: block;
+	height: 100vh;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* optional: subtle scrollbar styling for webkit browsers */
+app-root::-webkit-scrollbar { width: 10px; }
+app-root::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.06); border-radius: 6px; }

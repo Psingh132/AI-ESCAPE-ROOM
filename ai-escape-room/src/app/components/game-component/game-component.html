@@ -1,0 +1,134 @@
+<div class="game-shell">
+  <div class="game-inner">
+
+    <!-- ══════════════════════════════════════════
+         FIXED ZONE — hero + mission settings
+         Never scrolls, always visible at top
+         ══════════════════════════════════════════ -->
+    <div class="fixed-zone">
+
+      <section class="hero-panel">
+        <div class="hero-badge">&#9670; AI ESCAPE ROOM &#9670;</div>
+        <h1>Crack the code. Escape the chamber.</h1>
+        <p>Choose a story theme, set the difficulty, and let the AI craft a puzzle adventure unique to you.</p>
+        <div class="hero-meta">
+          <span class="status-pill">Single Player</span>
+          <span class="status-pill">AI-generated puzzles</span>
+        </div>
+      </section>
+
+      <section class="panel settings-card">
+        <div class="panel-title">Mission Settings</div>
+        <div class="controls">
+          <div class="field">
+            <label>Audience</label>
+            <select [value]="audience" (change)="onAudienceChange($any($event.target).value)">
+              <option value="Adult">Adult</option>
+              <option value="Child">Child</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Theme</label>
+            <select [value]="theme" (change)="theme = $any($event.target).value">
+              <option *ngFor="let option of themeOptions" [value]="option.id">
+                {{ option.displayName }}
+              </option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Difficulty</label>
+            <select [value]="difficulty" (change)="difficulty = $any($event.target).value">
+              <option>Easy</option>
+              <option>Medium</option>
+              <option>Hard</option>
+            </select>
+          </div>
+
+          <button class="primary" (click)="startGame()">Start Mission</button>
+        </div>
+      </section>
+
+    </div><!-- /fixed-zone -->
+
+    <!-- ══════════════════════════════════════════
+         SCROLL ZONE — all game panels live here
+         Fills remaining height, scrolls internally
+         ══════════════════════════════════════════ -->
+    <div class="scroll-zone">
+
+      <!-- Session status -->
+      <section class="panel status-card" *ngIf="error || loading || gameStarted">
+        <div class="panel-title">Session Status</div>
+        <div class="status-row">
+          <div class="status-pill" *ngIf="loading">Generating chamber…</div>
+          <div class="status-pill status-active" *ngIf="gameStarted && currentRoom">
+            In progress: {{ currentRoom.roomName }}
+          </div>
+          <div class="status-pill status-error" *ngIf="error">{{ error }}</div>
+        </div>
+      </section>
+
+      <!-- Mission log -->
+      <section class="panel story-card" *ngIf="gameStarted && currentRoom">
+        <div class="panel-title">Mission Log</div>
+        <div class="messages">
+          <div *ngFor="let m of messages" class="message">{{ m }}</div>
+        </div>
+      </section>
+
+      <!-- Active puzzle -->
+      <section class="panel puzzle-card" *ngIf="gameStarted && currentPuzzle">
+        <div class="panel-title">
+          Puzzle {{ currentPuzzle.sequenceNumber }} of 3 &nbsp;·&nbsp; {{ currentPuzzle.puzzleTitle }}
+        </div>
+        <div class="attempt-pips">
+          <div class="pip" [class.used]="attemptCount >= 1"></div>
+          <div class="pip" [class.used]="attemptCount >= 2"></div>
+          <div class="pip" [class.used]="attemptCount >= 3"></div>
+        </div>
+        <div class="prompt">{{ currentPuzzle.description }}</div>
+        <div class="answer-row">
+          <input
+            placeholder="Enter your answer…"
+            [disabled]="loading"
+            [value]="playerAnswer"
+            (input)="playerAnswer = $any($event.target).value"
+          />
+          <button class="primary" [disabled]="loading" (click)="submitAnswer()">Submit</button>
+          <button class="secondary" [disabled]="loading" (click)="askHint()">Hint</button>
+        </div>
+        <div class="feedback" *ngIf="feedback">{{ feedback }}</div>
+      </section>
+
+      <!-- Game over -->
+      <section class="panel game-over-card" *ngIf="gameFailed && messages.length && !error">
+        <div class="panel-title">Chamber Sealed</div>
+        <div class="game-over-message">{{ messages[messages.length - 1] }}</div>
+        <div class="game-over-actions">
+          <button class="primary" (click)="startGame()">Try Again</button>
+          <button class="secondary" (click)="resetGame()">Quit</button>
+        </div>
+      </section>
+
+      <!-- Success -->
+      <section class="panel success-card" *ngIf="gameCompleted && messages.length && !error">
+        <div class="panel-title">Chamber Breached</div>
+        <div class="success-message">{{ messages[messages.length - 1] }}</div>
+        <div class="game-over-actions">
+          <button class="primary" (click)="startGame()">Play Again</button>
+          <button class="secondary" (click)="resetGame()">Quit</button>
+        </div>
+      </section>
+
+      <!-- Idle -->
+      <section class="panel idle-card" *ngIf="!gameStarted && !loading">
+        <div class="panel-title">Awaiting Operative</div>
+        <p>Set your theme and difficulty above, then hit <strong>Start Mission</strong> to enter the chamber.</p>
+      </section>
+
+    </div><!-- /scroll-zone -->
+
+  </div><!-- /game-inner -->
+</div><!-- /game-shell -->
