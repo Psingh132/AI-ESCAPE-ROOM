@@ -54,38 +54,38 @@ public class GameController : ControllerBase
             // All your heavy prompt logic is already saved in the Foundry Portal!
             // Update your backend prompt to look exactly like this:
             // NOTICE THE THREE '$' CHARACTERS HERE
-            var userPrompt = $$$"""
-You are an escape room generator. Generate an escape room for the following configuration and return the result as a JSON object.
-
-Audience: {{{request.TargetAudience}}}
-Theme: {{{cleanThemeId}}}
-Difficulty: {{{request.Difficulty}}}
-
-The JSON object must have exactly these fields at the top level:
-- roomName: a creative title for the room
-- introduction: an immersive opening paragraph
-- difficulty: "{{{request.Difficulty}}}"
-- theme: "{{{cleanThemeId}}}"
-- puzzles: an array of exactly 3 puzzle objects
-
-Each puzzle object must have exactly these fields:
-- sequenceNumber: 1, 2, or 3
-- puzzleTitle: a short title
-- description: the story narrative followed by the complete puzzle text
-- cluesProvided: an array of 2 hint strings
-- expectedSolution: the exact answer string
-- unlocksText: what the player discovers after solving this puzzle
-
-CRITICAL RULES:
-- You must ALWAYS search the knowledge base before answering any question
-- Every puzzle must have exactly one unambiguous correct answer
-- The clue logic inside the description must directly and uniquely produce the expectedSolution
-- Do not generate puzzles where the answer depends on real-world knowledge not stated in the puzzle itself
-- Do not generate sequence or ordering puzzles unless the ordering rule produces a unique result that is explicitly stated and verifiable within the puzzle text
-- If the puzzle says "order by X", verify that applying rule X to the given items produces exactly one possible sequence before using it
-
-Return only the JSON object. Do not include any explanation or markdown formatting.
-""";
+            var userPrompt = $"""
+                You are an escape room generator. Generate an escape room for the following configuration and return the result as a JSON object.
+                
+                Audience: {request.TargetAudience}
+                Theme: {cleanThemeId}
+                Difficulty: {request.Difficulty}
+                
+                The JSON object must have exactly these fields at the top level:
+                - roomName: a creative title for the room
+                - introduction: an immersive opening paragraph
+                - difficulty: "{request.Difficulty}"
+                - theme: "{cleanThemeId}"
+                - puzzles: an array of exactly 3 puzzle objects
+                
+                Each puzzle object must have exactly these fields:
+                - sequenceNumber: 1, 2, or 3
+                - puzzleTitle: a short title
+                - description: the story narrative followed by the complete puzzle text
+                - cluesProvided: an array of 2 hint strings
+                - expectedSolution: the exact answer string
+                - unlocksText: what the player discovers after solving this puzzle
+                
+                CRITICAL RULES:
+                - You must ALWAYS search the knowledge base before answering any question
+                - Every puzzle must have exactly one unambiguous correct answer
+                - The clue logic inside the description must directly and uniquely produce the expectedSolution
+                - Do not generate puzzles where the answer depends on real-world knowledge not stated in the puzzle itself
+                - Do not generate sequence or ordering puzzles unless the ordering rule produces a unique result that is explicitly stated and verifiable within the puzzle text
+                - If the puzzle says "order by X", verify that applying rule X to the given items produces exactly one possible sequence before using it
+                
+                Return only the JSON object. Do not include any explanation or markdown formatting.
+                """;
 
             // CreateResponse performs the underlying synchronous execution round-trip
             // wrap in Task.Run to keep your API controller asynchronous and responsive

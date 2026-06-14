@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\AI Project\\ai-escape-room-api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{653E576D-E621-4C3F-EE1A-58ACD10E2EF0}|ai-escape-room-api.csproj|d:\\ai project\\ai-escape-room-api\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{653E576D-E621-4C3F-EE1A-58ACD10E2EF0}|ai-escape-room-api.csproj|solutionrelative:controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{653E576D-E621-4C3F-EE1A-58ACD10E2EF0}|ai-escape-room-api.csproj|d:\\ai project\\ai-escape-room-api\\models\\escaperoomresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{653E576D-E621-4C3F-EE1A-58ACD10E2EF0}|ai-escape-room-api.csproj|solutionrelative:models\\escaperoomresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{653E576D-E621-4C3F-EE1A-58ACD10E2EF0}|ai-escape-room-api.csproj|d:\\ai project\\ai-escape-room-api\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{653E576D-E621-4C3F-EE1A-58ACD10E2EF0}|ai-escape-room-api.csproj|solutionrelative:controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{653E576D-E621-4C3F-EE1A-58ACD10E2EF0}|ai-escape-room-api.csproj|d:\\ai project\\ai-escape-room-api\\common\\thememapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -50,8 +50,7 @@
               "RelativeToolTip": "Enum\\GameTheme.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T07:01:12.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-14T07:01:12.876Z"
             },
             {
               "$type": "Document",
@@ -63,18 +62,17 @@
               "RelativeToolTip": "Common\\ThemeMapper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T04:44:05.797Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-14T04:44:05.797Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "GameController.cs",
               "DocumentMoniker": "D:\\AI Project\\ai-escape-room-api\\Controllers\\GameController.cs",
               "RelativeDocumentMoniker": "Controllers\\GameController.cs",
               "ToolTip": "D:\\AI Project\\ai-escape-room-api\\Controllers\\GameController.cs",
               "RelativeToolTip": "Controllers\\GameController.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAYwFkAAABWAAAAAAAAAA==",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAawGoAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-13T17:09:15.374Z",
               "EditorCaption": ""
@@ -93,13 +91,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "EscapeRoomResponse.cs",
               "DocumentMoniker": "D:\\AI Project\\ai-escape-room-api\\Models\\EscapeRoomResponse.cs",
               "RelativeDocumentMoniker": "Models\\EscapeRoomResponse.cs",
               "ToolTip": "D:\\AI Project\\ai-escape-room-api\\Models\\EscapeRoomResponse.cs",
               "RelativeToolTip": "Models\\EscapeRoomResponse.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwBMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-13T14:36:48.369Z",
               "EditorCaption": ""

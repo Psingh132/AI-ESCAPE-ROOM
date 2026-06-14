@@ -50,8 +50,7 @@
               "RelativeToolTip": "Enum\\GameTheme.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T07:01:12.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-14T07:01:12.876Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "Common\\ThemeMapper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T04:44:05.797Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-14T04:44:05.797Z"
             },
             {
               "$type": "Document",
@@ -74,7 +72,7 @@
               "RelativeDocumentMoniker": "Controllers\\GameController.cs",
               "ToolTip": "D:\\AI Project\\ai-escape-room-api\\Controllers\\GameController.cs",
               "RelativeToolTip": "Controllers\\GameController.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAYwE8AAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAUwEgAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-13T17:09:15.374Z",
               "EditorCaption": ""
@@ -101,8 +99,7 @@
               "RelativeToolTip": "Models\\EscapeRoomResponse.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-13T14:36:48.369Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-13T14:36:48.369Z"
             },
             {
               "$type": "Document",
